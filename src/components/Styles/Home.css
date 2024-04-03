@@ -1,0 +1,289 @@
+* {
+  font-family: "roboto", sans-serif;
+}
+
+.homeBannerSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    height: 100vh; /* Adjust height to fit viewport */
+  }
+  
+  .videoWrapper {
+    position: relative;
+    margin-top: 50px;
+    width: 100%;
+    overflow: hidden;
+    flex: 1; /* Expand to fill remaining space */
+  }
+  
+  .video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the container */
+  }
+
+  /* Design for Drawer Wrapper */
+  .drawerWrapper {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .drawer {
+    position: relative;
+  }
+  
+  .drawerHandle {
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    background-color: green;
+    margin-bottom: 2px; /* Adjust as needed */
+    position: relative; /* Ensure the handle is positioned relatively */
+    border-radius: 3px; /* Add curved corners */
+  }
+  
+  .drawerContent {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: -220px; /* Initially set the drawer content off-screen */
+    width: 220px; /* Set the width to match the drawer width */
+    background-color: green;
+    color: white;
+    padding: 10px;
+    overflow: hidden; /* Hide overflowing content */
+    white-space: nowrap; /* Prevent wrapping of text */
+    transition: right 0.5s ease, width 0.5s ease; /* Add transition for smooth animation */
+    display: flex; /* Make content flex */
+    align-items: center; /* Center items vertically */
+    border-radius: 5px; /* Add curved corners */
+  }
+  
+  
+  .drawer:hover .drawerContent {
+    right: 0; /* Move the drawer content to the right on hover */
+  }
+  
+  .drawerHandle svg {
+    margin-right: 5px; /* Add margin to separate icon and text */
+  }
+
+  .drawerContent svg {
+    margin-right: 8px;
+  }
+  
+  /* Typing style starts */
+.headingWrapper {
+  position: absolute;
+  top: 50%;
+  left: 20px; /* Adjust the left position as needed */
+  transform: translateY(-50%);
+  text-align: left; /* Align text to the left */
+  z-index: 2; /* Ensure headings appear above video */
+}
+
+.heading {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  animation: fadeInUp 5s ease;
+}
+
+.subHeading {
+  font-size: 40px;
+  margin-bottom: 20px;
+  animation: fadeInUp 5s ease;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 600px) {
+  .headingWrapper {
+    left: 10px; /* Adjust left position for mobile */
+  }
+
+  .heading {
+    font-size: 32px; /* Reduce font size for mobile */
+    margin-bottom: 10px; /* Adjust margin for mobile */
+  }
+
+  .subHeading {
+    font-size: 18px; /* Reduce font size for mobile */
+    margin-bottom: 10px; /* Adjust margin for mobile */
+  }
+}
+
+.typing {
+  color: green;
+}
+
+.service {
+  color: #FF9933;
+}
+
+.typed-cursor {
+  color: #FF9933 !important; /* Change cursor color to red */
+}
+
+/* Typing style Ended */
+
+/* Services section Starts */
+.boxSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 5%;
+  margin-right: 5%;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(25% - 20px); /* Adjust box width and reduce margin */
+  margin: 0 5px; /* Adjust margin between boxes */
+  padding: 30px; /* Increase padding to increase box height */
+  background-color: #fff;
+  box-shadow: 2px 2px 2px 2px black;
+  border-radius: 5px; /* Rounded corners */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+
+.boxIcon {
+  width: 50px;
+  height: 50px;
+}
+
+.boxText {
+  margin-top: 10px;
+}
+
+/* Animation */
+.animate {
+  opacity: 1;
+}
+
+/* Hover effect */
+.box:hover {
+  transform: scale(1.05); /* Scale up on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add larger shadow on hover */
+}
+
+.Serviceheading {
+  margin-top: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.5s ease, transform 0.9s ease;
+}
+
+.Serviceheading.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Introduction Section Starts */
+
+.introImage {
+  width: 100%;
+  height: 50%;
+}
+
+.introSection {
+  position: relative;
+  margin-top: 50px;
+}
+
+.introImageClass {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; /* Add this line to create space between introLeft and introRight */
+}
+
+.introLeft,
+.introRight {
+    flex: 1;
+    padding: 20px;
+    text-align: justify; /* Center align the text */
+}
+
+.boxesSection {
+  display: flex;
+  flex-direction: row;
+}
+
+.boxes {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #FF9933; /* Adjust border width as needed */
+  border-radius: 50%; /* This makes the box circular */
+  width: 160px; /* Adjust width as needed */
+  height: 130px; /* Adjust height as needed */
+  overflow: hidden; /* Ensures content doesn't overflow outside the circle */
+  background-color: white; /* Fill the background of the box with white */
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+.boxes:hover {
+  transform: scale(1.1); /* Increase size on hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+}
+
+
+
+.icon {
+  width: 50px;
+  height: 50px;
+}
+
+.text {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.utubevideoWrapper {
+  padding-top: 50px;
+  margin-top: 10px;
+  margin-left: 15%;
+}
