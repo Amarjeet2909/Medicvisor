@@ -18,11 +18,37 @@
     flex: 1; /* Expand to fill remaining space */
   }
   
-  .video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Cover the container */
-  }
+  .imageWrapper {
+    width: 100vw; /* Use viewport width to cover the entire screen */
+    height: 100vh; /* Use viewport height to cover the entire screen */
+    overflow: hidden;
+    position: relative; /* Ensure proper positioning for child elements */
+}
+
+.video {
+    min-width: 100%; /* Ensure the video takes up at least the width of its container */
+    min-height: 100%; /* Ensure the video takes up at least the height of its container */
+    width: auto; /* Allow the video to adjust its width based on its aspect ratio */
+    height: auto; /* Allow the video to adjust its height based on its aspect ratio */
+    position: absolute; /* Position the video relative to its parent container */
+    top: 50%; /* Center the video vertically */
+    left: 50%; /* Center the video horizontally */
+    transform: translate(-50%, -50%); /* Center the video using translate */
+}
+
+@media screen and (max-width: 768px) {
+    .imageWrapper {
+        width: 100vw;
+        height: 50vh; /* Adjust as needed */
+    }
+
+    .video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
 
   /* Design for Drawer Wrapper */
   .drawerWrapper {
@@ -89,13 +115,6 @@
   z-index: 2; /* Ensure headings appear above video */
 }
 
-.heading {
-  font-size: 48px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  animation: fadeInUp 5s ease;
-}
-
 .subHeading {
   font-size: 40px;
   margin-bottom: 20px;
@@ -117,11 +136,6 @@
 @media only screen and (max-width: 600px) {
   .headingWrapper {
     left: 10px; /* Adjust left position for mobile */
-  }
-
-  .heading {
-    font-size: 32px; /* Reduce font size for mobile */
-    margin-bottom: 10px; /* Adjust margin for mobile */
   }
 
   .subHeading {

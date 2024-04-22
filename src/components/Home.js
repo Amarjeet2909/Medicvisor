@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import Typed from 'typed.js';
-import poster from "../assets/images/poster.jpg";
+import poster from "../assets/images/poster.gif";
 import "./Styles/Home.css";
 import ambulance from "../assets/images/ambulance.png"
 import nurse from "../assets/images/nurse.png";
@@ -115,15 +115,17 @@ const Home = () => {
         <div className="home">
             <div className="homeBannerSection">
                 <div className="videoWrapper">
+                <div className="imageWrapper">
                 <img src={poster} className="video">
-                    </img>
+                </img>
+                </div>
                     <div className="headingWrapper">
-                        <h1 className="heading">Health Accessible in Need and Utility for MANkind</h1>
                         <h2 className="subHeading"><span class="service"></span></h2>
                     </div>
+
                     <div className="drawerWrapper">
-                        <div className={`drawer ${isCallDrawerOpen ? "open" : ""}`}>
-                            <div className="drawerHandle callHandle" onMouseEnter={toggleCallDrawer} onMouseLeave={toggleCallDrawer}>
+                      <div className={`drawer ${isCallDrawerOpen ? "open" : ""}`}>
+                        <div className="drawerHandle callHandle" onMouseEnter={toggleCallDrawer} onMouseLeave={toggleCallDrawer}>
                                 <FontAwesomeIcon icon={faPhone} />
                             </div>
                             <a href="tel:9264198199"><div className="drawerContent">
@@ -150,9 +152,12 @@ const Home = () => {
                             </div></a>
                         </div>
                     </div>
+                    
                 </div>
             </div>
             
+            
+
         </div>
     );
 }

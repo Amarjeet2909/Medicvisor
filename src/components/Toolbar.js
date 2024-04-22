@@ -36,7 +36,7 @@ const Toolbar = (props) => {
         strings: ["Welcome to Hanuman Your Trusted Healthcare Companion"],
         typeSpeed: 80,
         loop: false,
-        cursorChar: '+'
+        cursorChar: '👨‍⚕️ 🏥'
       };
     
       // Target the element with the "typing" class
@@ -87,7 +87,7 @@ const Toolbar = (props) => {
           <div className="contact-info">
             <span className="typing3"></span>
           </div>
-          <div className="contact-info">
+          <div className="contact-info1">
         <img className="emergencyIcon" src={emergency} alt="Emergency icon" />
           <span className="typing4"><p>Call for Emergency 9065389731</p></span>
       </div>
@@ -118,7 +118,7 @@ const Toolbar = (props) => {
 
               <li className="dropdownmenu">
                 <button className="dropbtn">
-                  <span>Services </span>
+                  <span>Ambulance</span>
                   <i className="fa fa-caret-down" />
                 </button>
                 <div className="dropdown-content">
@@ -143,9 +143,29 @@ const Toolbar = (props) => {
                   exact
                   className="activeclass"
                 >
-                  Blogs
+                  Diagnostic
                 </NavLink>
               </li>
+
+              <li>
+                <NavLink
+                  to="/our-recruiters"
+                  exact
+                  className="activeclass"
+                >
+                  Body Checkup
+                </NavLink>
+              </li>
+
+              <li>
+                <NavLink
+                  to="/procedure-and-policies"
+                  exact
+                  className="activeclass"
+                >
+                  Nursing
+                </NavLink>
+                </li>
 
               <li className="dropdownmenu">
                 <button className="dropbtn">
@@ -168,15 +188,7 @@ const Toolbar = (props) => {
                   </NavLink>
                 </div>
               </li>
-              <li>
-                <NavLink
-                  to="/procedure-and-policies"
-                  exact
-                  className="activeclass"
-                >
-                  Contact
-                </NavLink>
-                </li>
+
             </ul>
           </div>
         </nav>
